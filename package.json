@@ -1,0 +1,45 @@
+{
+  "name": "vue-theme-switcher",
+  "version": "1.0.0",
+  "description": "A beautiful and customizable theme switcher for Vue applications",
+  "type": "module",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && tsc",
+    "preview": "vite preview",
+    "test": "vitest --run",
+    "test:watch": "vitest",
+    "prepare": "npm run build"
+  },
+  "peerDependencies": {
+    "vue": "^3.4.0"
+  },
+  "dependencies": {
+    "vue": "^3.4.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.19",
+    "@vitejs/plugin-vue": "^5.0.0",
+    "sass": "^1.71.0",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.0",
+    "vitest": "^1.3.0"
+  },
+  "keywords": [
+    "vue",
+    "theme",
+    "theme-switcher",
+    "dark-mode",
+    "light-mode",
+    "customizable-themes"
+  ],
+  "author": "",
+  "license": "MIT"
+}

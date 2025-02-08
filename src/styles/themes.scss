@@ -1,0 +1,40 @@
+// Theme color variables
+$sunset-theme: (
+  primary-color: #FF6B6B,
+  secondary-color: #4ECDC4,
+  accent-color: #FFE66D,
+  text-color: #2C3E50,
+  bg-color: #FFF5F5
+);
+
+$forest-theme: (
+  primary-color: #2D5A27,
+  secondary-color: #A8E6CF,
+  accent-color: #DCC7AA,
+  text-color: #3D2C2E,
+  bg-color: #F3F8F2
+);
+
+$ocean-theme: (
+  primary-color: #003D5B,
+  secondary-color: #00B4D8,
+  accent-color: #90E0EF,
+  text-color: #CAF0F8,
+  bg-color: #012A4A
+);
+
+$galaxy-theme: (
+  primary-color: #2D00F7,
+  secondary-color: #8900F2,
+  accent-color: #BC00DD,
+  text-color: #F8F7FF,
+  bg-color: #1A1A2E
+);
+
+// Mixin to apply theme
+@mixin apply-theme($theme) {
+  @each $property, $value in $theme {
+    --#{$property}: #{$value};
+  }
+  background-color: var(--bg-color);
+}

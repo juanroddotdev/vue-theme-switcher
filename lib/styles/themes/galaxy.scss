@@ -1,0 +1,64 @@
+@use '../functions' as *;
+
+$theme: (
+  // Theme Switcher Button
+  'theme-switcher-button-color': linear-gradient(45deg, #7B1FA2, #E1BEE7),
+
+  // App Backgrounds/Surfaces
+  'color-bg-app': #EDE7F6,
+  'color-text-on-app-background': set-text-color(#EDE7F6),
+  
+  'color-bg-card': #FFFFFF,
+  'color-text-on-card-bg': set-text-color(#FFFFFF),
+  
+  'color-bg-code-block': #D1C4E9,
+  'color-text-on-code-block': set-text-color(#D1C4E9),
+  
+  // Text Colors
+  'color-text-heading': set-text-color(#EDE7F6),
+  
+  // Primary/Accent Colors
+  'color-primary-accent': #7B1FA2,
+  'color-text-on-primary-accent': set-text-color(#7B1FA2),
+  
+  'color-secondary-accent': #E1BEE7,
+  'color-text-on-secondary-accent': set-text-color(#E1BEE7),
+  
+  // Buttons
+  'color-button-default-bg': #A0A0A0,
+  'color-button-default-text': set-text-color(#A0A0A0),
+  
+  'color-button-hover-bg': #C0C0C0,
+  'color-button-hover-text': set-text-color(#C0C0C0),
+  
+  'color-button-border': #808080,
+  
+  // Links
+  'color-link-default': #4A148C,
+  'color-link-hover': #2A0066,
+  
+  // Form Elements
+  'color-input-border': #DDDDDD,
+  'color-input-bg': #F8F8F8,
+  'color-input-text': set-text-color(#F8F8F8),
+  
+  // Status Colors
+  'color-status-success-bg': #28a745,
+  'color-status-success-text': set-text-color(#28a745),
+  
+  'color-status-error-bg': #dc3545,
+  'color-status-error-text': set-text-color(#dc3545),
+  
+  'color-status-warning-bg': #ffc107,
+  'color-status-warning-text': set-text-color(#ffc107),
+  
+  'color-status-info-bg': #17a2b8,
+  'color-status-info-text': set-text-color(#17a2b8),
+  
+  // Borders/Dividers
+  'color-border-subtle': #CCCCCC,
+  'color-divider-line': #EEEEEE,
+  
+  // Shadows
+  'shadow-default': 0 2px 4px rgba(0, 0, 0, 0.15)
+); 

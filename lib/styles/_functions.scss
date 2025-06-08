@@ -1,0 +1,18 @@
+@use "sass:color";
+@use "sass:math";
+
+/// Determines the optimal text color (black or white) based on the luminosity of a background color.
+/// @param {Color} $color - The background color to calculate text color for
+/// @return {Color} - Returns either black or white based on luminosity threshold
+@function set-text-color($color) {
+  // Extract RGB components
+  $red: color.channel($color, "red", $space: rgb);
+  $green: color.channel($color, "green", $space: rgb);
+  $blue: color.channel($color, "blue", $space: rgb);
+
+  // Calculate luminosity using weighted formula
+  $luminosity: math.div(($red * 299) + ($green * 587) + ($blue * 114), 1000);
+
+  // Return black for light backgrounds, white for dark backgrounds
+  @return if($luminosity > 180, #000000, #ffffff);
+} 

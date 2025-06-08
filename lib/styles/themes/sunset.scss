@@ -1,0 +1,128 @@
+// Sunset Theme
+@use '../functions' as *;
+
+$theme: (
+  // Theme Switcher Button
+  'theme-switcher-button-color': linear-gradient(45deg, #FF6B6B, #4ECDC4),
+
+  // App Backgrounds/Surfaces
+  'color-bg-app': #FFF5F5,
+  'color-text-on-app-background': set-text-color(#FFF5F5),
+  
+  'color-bg-card': #FFFFFF,
+  'color-text-on-card-bg': set-text-color(#FFFFFF),
+  
+  'color-bg-code-block': #FFE66D,
+  'color-text-on-code-block': set-text-color(#FFE66D),
+  
+  // Text Colors
+  'color-text-heading': set-text-color(#FFF5F5),
+  
+  // Primary/Accent Colors
+  'color-primary-accent': #FF6B6B,
+  'color-text-on-primary-accent': set-text-color(#FF6B6B),
+  
+  'color-secondary-accent': #4ECDC4,
+  'color-text-on-secondary-accent': set-text-color(#4ECDC4),
+  
+  // Buttons
+  'color-button-default-bg': #A0A0A0,
+  'color-button-default-text': set-text-color(#A0A0A0),
+  
+  'color-button-hover-bg': #C0C0C0,
+  'color-button-hover-text': set-text-color(#C0C0C0),
+  
+  'color-button-border': #808080,
+  
+  // Links
+  'color-link-default': #E65100,
+  'color-link-hover': #B33900,
+  
+  // Form Elements
+  'color-input-border': #DDDDDD,
+  'color-input-bg': #F8F8F8,
+  'color-input-text': set-text-color(#F8F8F8),
+  
+  // Status Colors
+  'color-status-success-bg': #28a745,
+  'color-status-success-text': set-text-color(#28a745),
+  
+  'color-status-error-bg': #dc3545,
+  'color-status-error-text': set-text-color(#dc3545),
+  
+  'color-status-warning-bg': #ffc107,
+  'color-status-warning-text': set-text-color(#ffc107),
+  
+  'color-status-info-bg': #17a2b8,
+  'color-status-info-text': set-text-color(#17a2b8),
+  
+  // Borders/Dividers
+  'color-border-subtle': #CCCCCC,
+  'color-divider-line': #EEEEEE,
+  
+  // Shadows
+  'shadow-default': 0 2px 4px rgba(0, 0, 0, 0.15)
+);
+
+:root[data-theme="sunset"] {
+  // Theme Switcher Button
+  --theme-switcher-button-color: linear-gradient(45deg, #FF6B6B, #4ECDC4);
+
+  // App Backgrounds/Surfaces
+  --color-bg-app: #FFF5F5;
+  --color-text-on-app-background: #{set-text-color(#FFF5F5)};
+  
+  --color-bg-card: #FFFFFF;
+  --color-text-on-card-bg: #{set-text-color(#FFFFFF)};
+  
+  --color-bg-code-block: #FFE66D;
+  --color-text-on-code-block: #{set-text-color(#FFE66D)};
+  
+  // Text Colors
+  --color-text-heading: #{set-text-color(#FFF5F5)};
+  
+  // Primary/Accent Colors
+  --color-primary-accent: #FF6B6B;
+  --color-text-on-primary-accent: #{set-text-color(#FF6B6B)};
+  
+  --color-secondary-accent: #4ECDC4;
+  --color-text-on-secondary-accent: #{set-text-color(#4ECDC4)};
+  
+  // Buttons
+  --color-button-default-bg: #A0A0A0;
+  --color-button-default-text: #{set-text-color(#A0A0A0)};
+  
+  --color-button-hover-bg: #C0C0C0;
+  --color-button-hover-text: #{set-text-color(#C0C0C0)};
+  
+  --color-button-border: #808080;
+  
+  // Links
+  --color-link-default: #E65100;
+  --color-link-hover: #B33900;
+  
+  // Form Elements
+  --color-input-border: #DDDDDD;
+  --color-input-bg: #F8F8F8;
+  --color-input-text: #{set-text-color(#F8F8F8)};
+  
+  // Status Colors
+  --color-status-success-bg: #28a745;
+  --color-status-success-text: #{set-text-color(#28a745)};
+  
+  --color-status-error-bg: #dc3545;
+  --color-status-error-text: #{set-text-color(#dc3545)};
+  
+  --color-status-warning-bg: #ffc107;
+  --color-status-warning-text: #{set-text-color(#ffc107)};
+  
+  --color-status-info-bg: #17a2b8;
+  --color-status-info-text: #{set-text-color(#17a2b8)};
+  
+  // Borders/Dividers
+  --color-border-subtle: #CCCCCC;
+  --color-divider-line: #EEEEEE;
+  
+  // Shadows
+  --shadow-default: 0 2px 4px rgba(0, 0, 0, 0.15);
+} 

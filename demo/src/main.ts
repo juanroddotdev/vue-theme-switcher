@@ -1,6 +1,5 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import ThemeSwitcher from '@lib/components/ThemeSwitcher.vue'
 import { useTheme } from '@lib/composables/useTheme'
 import './style.scss'
 // import './landing.scss'

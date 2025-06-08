@@ -138,7 +138,6 @@ import { useTheme } from 'vue-theme-switcher';
 type ThemeInstance = ReturnType<typeof useTheme>;
 const theme = inject<ThemeInstance>('theme');
 if (!theme) throw new Error('Theme not provided');
-const { currentTheme } = theme;
 </script>
 
 <style lang="scss" scoped>

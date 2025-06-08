@@ -9,9 +9,9 @@
 
 <script setup lang="ts">
 import { inject } from 'vue';
-import ThemeSwitcher from 'vue-theme-switcher';
+import ThemeSwitcher from '@lib/components/ThemeSwitcher.vue';
 import ThemeSwitcherLandingPage from './ThemeSwitcherLandingPage.vue';
-import { useTheme } from 'vue-theme-switcher';
+import { useTheme } from '@lib/composables/useTheme';
 
 type ThemeInstance = ReturnType<typeof useTheme>;
 const theme = inject<ThemeInstance>('theme');
@@ -20,7 +20,7 @@ const { currentTheme } = theme;
 </script>
 
 <style lang="scss">
-@import 'vue-theme-switcher/dist/style.css';
+@import '@lib/styles/themes.scss';
 
 .app {
   min-height: 100vh;

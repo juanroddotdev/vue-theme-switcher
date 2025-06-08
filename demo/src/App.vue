@@ -2,16 +2,19 @@
   <div class="app" :class="currentTheme">
     <ThemeSwitcher />
     <main class="content">
-      <h1>{{ themeContent[currentTheme].title }}</h1>
-      <p>{{ themeContent[currentTheme].description }}</p>
+      <!-- <h1>{{ themeContent[currentTheme].title }}</h1>
+      <p>{{ themeContent[currentTheme].description }}</p> -->
+
+      <ThemeSwitcherLandingPage />
     </main>
   </div>
 </template>
 
 <script setup lang="ts">
-import { provide, computed } from 'vue';
-import ThemeSwitcher from './components/ThemeSwitcher.vue';
-import { useTheme } from './composables/useTheme';
+import { provide } from 'vue';
+import ThemeSwitcher from '../../lib/components/ThemeSwitcher.vue';
+import ThemeSwitcherLandingPage from './ThemeSwitcherLandingPage.vue';
+import { useTheme } from '../../lib/composables/useTheme';
 
 const theme = useTheme();
 provide('theme', theme);
@@ -38,7 +41,7 @@ const themeContent = {
 </script>
 
 <style lang="scss">
-@use './styles/themes' as themes;
+@use '@lib/styles/themes' as themes;
 
 .app {
   min-height: 100vh;
@@ -63,10 +66,10 @@ const themeContent = {
 }
 
 .content {
-  max-width: 800px;
+  max-width: 1200px;
   margin: 0 auto;
   text-align: center;
-  padding-top: 20vh;
+  padding-top: 10vh;
 
   h1 {
     font-size: 3.5rem;
@@ -85,6 +88,60 @@ const themeContent = {
     max-width: 600px;
     margin: 0 auto;
     transition: all 0.3s ease;
+  }
+}
+
+.demo-section {
+  margin-top: 4rem;
+
+  h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+  }
+}
+
+.demo-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.demo-card {
+  background: var(--bg-color);
+  border: 2px solid var(--primary-color);
+  border-radius: 12px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  h3 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    color: var(--text-color);
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.demo-button {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
 }
 </style>

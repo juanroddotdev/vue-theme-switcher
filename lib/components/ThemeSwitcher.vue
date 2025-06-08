@@ -2,28 +2,18 @@
   <div class="theme-switcher">
     <button
       v-for="theme in themes"
-      :key="theme.name"
-      :class="['theme-button', theme.name, { active: currentTheme === theme.name }]"
-      :aria-label="`Switch to ${theme.name} theme`"
-      @click="setTheme(theme.name)"
-      :style="{
-        background: `linear-gradient(45deg, ${theme.colors.primaryColor}, ${theme.colors.secondaryColor})`
-      }"
+      :key="theme"
+      :class="['theme-button', theme, { active: currentTheme === theme }]"
+      :aria-label="`Switch to ${theme} theme`"
+      @click="setTheme(theme)"
     ></button>
   </div>
 </template>
 
 <script setup lang="ts">
 import { inject } from 'vue';
-import type { Theme } from '../index';
 
-interface ThemeContext {
-  themes: Theme[];
-  currentTheme: string;
-  setTheme: (theme: string) => void;
-}
-
-const { themes, currentTheme, setTheme } = inject('theme') as ThemeContext;
+const { themes, currentTheme, setTheme } = inject('theme');
 </script>
 
 <style lang="scss" scoped>
@@ -51,6 +41,22 @@ const { themes, currentTheme, setTheme } = inject('theme') as ThemeContext;
   &.active {
     border-color: white;
     transform: scale(1.2);
+  }
+
+  &.sunset {
+    background: linear-gradient(45deg, #FF6B6B, #4ECDC4);
+  }
+
+  &.forest {
+    background: linear-gradient(45deg, #2D5A27, #A8E6CF);
+  }
+
+  &.ocean {
+    background: linear-gradient(45deg, #003D5B, #00B4D8);
+  }
+
+  &.galaxy {
+    background: linear-gradient(45deg, #2D00F7, #8900F2);
   }
 
   &:focus-visible {

@@ -1,9 +1,9 @@
-import type { App } from 'vue';
 import ThemeSwitcher from './components/ThemeSwitcher.vue';
 import { useTheme } from './composables/useTheme';
 import './styles/base.scss';
 
 export { ThemeSwitcher, useTheme };
+export default ThemeSwitcher;
 
 export interface Theme {
   name: string;

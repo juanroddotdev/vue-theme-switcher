@@ -18,9 +18,10 @@
     "./style.css": "./dist/style.css"
   },
   "scripts": {
-    "dev": "vite",
     "build": "vite build && tsc",
-    "preview": "vite preview",
+    "build:demo": "cd demo && vite build",
+    "dev:demo": "cd demo && vite",
+    "preview:demo": "cd demo && vite preview",
     "test": "vitest --run",
     "test:watch": "vitest",
     "prepare": "npm run build",

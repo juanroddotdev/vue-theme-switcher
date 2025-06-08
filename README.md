@@ -1,6 +1,16 @@
 # Vue Theme Switcher
 
-A beautiful and customizable theme switcher for Vue applications.
+A beautiful and customizable theme switcher for Vue applications. Easily add theme switching functionality to your Vue 3 projects with a simple, accessible, and customizable component.
+
+## Features
+
+- 🌈 Multiple built-in themes (Sunset, Forest, Ocean, Galaxy)
+- 🎨 Fully customizable themes
+- 💾 Theme persistence using localStorage
+- ♿ Accessible with keyboard navigation
+- 🎯 TypeScript support
+- 🎭 Smooth transitions between themes
+- 📱 Responsive design
 
 ## Installation
 
@@ -10,46 +20,65 @@ npm install vue-theme-switcher
 yarn add vue-theme-switcher
 ```
 
-## Usage
+## Quick Start
 
-1. Register the plugin in your Vue app:
-
-```javascript
-import { createApp } from 'vue';
-import VueThemeSwitcher from 'vue-theme-switcher';
-import App from './App.vue';
-
-const app = createApp(App);
-app.use(VueThemeSwitcher);
-app.mount('#app');
-```
-
-2. Use the theme switcher in your components:
+1. Import and use the component:
 
 ```vue
 <template>
   <div>
     <ThemeSwitcher />
-    <h1>My App</h1>
-    <!-- Your content here -->
+    <!-- Your app content -->
   </div>
 </template>
 
 <script setup>
-import { useTheme } from 'vue-theme-switcher';
+import { ThemeSwitcher, useTheme } from 'vue-theme-switcher';
 
+// Optional: Use the theme composable if you need theme state
 const { currentTheme } = useTheme();
 </script>
 ```
 
-## Customization
-
-You can customize the themes and options when installing the plugin:
+2. Add the styles to your main CSS file:
 
 ```javascript
-app.use(VueThemeSwitcher, {
-  storageKey: 'my-theme-key',
-  defaultTheme: 'forest',
+// main.js or main.ts
+import 'vue-theme-switcher/style.css';
+```
+
+## Customization
+
+### Basic Theme Configuration
+
+```javascript
+import { createApp } from 'vue';
+import { ThemeSwitcher, useTheme } from 'vue-theme-switcher';
+import App from './App.vue';
+
+const app = createApp(App);
+
+// Optional: Configure default theme
+const theme = useTheme({
+  defaultTheme: 'forest', // 'sunset' | 'forest' | 'ocean' | 'galaxy'
+  storageKey: 'my-theme-key' // Custom localStorage key
+});
+
+app.mount('#app');
+```
+
+### Custom Themes
+
+You can define your own themes by extending the default ones:
+
+```javascript
+import { createApp } from 'vue';
+import { ThemeSwitcher, useTheme } from 'vue-theme-switcher';
+import App from './App.vue';
+
+const app = createApp(App);
+
+const theme = useTheme({
   themes: [
     {
       name: 'light',
@@ -73,25 +102,74 @@ app.use(VueThemeSwitcher, {
     }
   ]
 });
+
+app.mount('#app');
 ```
 
-## API
-
-### useTheme
-
-The `useTheme` composable provides access to the theme state and methods:
-
-```javascript
-const { currentTheme, setTheme, themes } = useTheme();
-```
-
-- `currentTheme`: Ref containing the current theme name
-- `setTheme(themeName: string)`: Function to change the current theme
-- `themes`: Array of available themes
+## API Reference
 
 ### ThemeSwitcher Component
 
-The `ThemeSwitcher` component provides a UI for switching themes. It can be customized using CSS variables and classes.
+The main component that renders the theme switcher UI.
+
+```vue
+<ThemeSwitcher />
+```
+
+### useTheme Composable
+
+A composable that provides theme management functionality.
+
+```javascript
+const { currentTheme, setTheme, themes } = useTheme(options);
+```
+
+#### Parameters
+
+- `options` (optional):
+  - `defaultTheme`: string - The default theme name
+  - `storageKey`: string - Custom localStorage key
+  - `themes`: Theme[] - Custom theme definitions
+
+#### Returns
+
+- `currentTheme`: Ref<string> - The current theme name
+- `setTheme`: (theme: string) => void - Function to change the theme
+- `themes`: string[] - Available theme names
+
+## CSS Variables
+
+The component uses CSS variables for theming. You can use these in your own styles:
+
+```css
+:root {
+  --primary-color: #FF6B6B;
+  --secondary-color: #4ECDC4;
+  --accent-color: #FFE66D;
+  --text-color: #2C3E50;
+  --bg-color: #FFF5F5;
+}
+```
+
+## Demo
+
+Check out the [live demo](https://your-demo-url.com) or run it locally:
+
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/vue-theme-switcher.git
+
+# Install dependencies
+cd vue-theme-switcher
+npm install
+
+# Run the demo
+npm run dev:demo
+```
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## License
 
